@@ -41,7 +41,7 @@ public class HelloController {
     public Response createJSON(@RequestParam String value, String num) {
         String result;
 
-        if (num == "2") {
+        if (num.equals("2")) {
             String testCase[] = new String[4];
             testCase[0] = "abc";
             testCase[1] = "abc123";
@@ -71,7 +71,7 @@ public class HelloController {
 
         } else if (num == " " || num == "" || num == null) {
             return Response.status(400).entity("Num is empty").build();
-        } else if (num == "1"){
+        } else if (num.equals("1")){
             result = hasd(value);
             if (result != "Value is empty") {
                 return Response.status(200).entity(result).build();
